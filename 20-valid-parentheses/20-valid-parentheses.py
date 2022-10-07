@@ -2,14 +2,14 @@ class Solution:
     def isValid(self, s: str) -> bool:
         parMap = {')': '(', ']':'[', '}':'{'}
         stack = []
+        
         for i in s:
-            if i in parMap: 
-                if len(stack) > 0 and stack[-1] == parMap[i]:
-                    stack.pop()
-                else:
-                    return False
-            else:
+            if i not in parMap:
                 stack.append(i)
+                continue
+            if not stack or stack[-1] != parMap[i]:
+                return False
+            stack.pop()
+
         return not stack
-               
                 
