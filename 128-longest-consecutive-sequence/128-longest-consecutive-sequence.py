@@ -3,7 +3,7 @@ class Solution:
         Set = set(nums)
         longest = 0
         #iterate through nums
-        for n in nums:
+        for n in Set:
             # if num is start of sequence check sequence length
             # n is start of sequence if n - 1 not in set
             if (n - 1) not in Set:
