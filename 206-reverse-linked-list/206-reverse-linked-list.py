@@ -12,20 +12,14 @@ class Solution:
         if not head or not head.next:
             return head
         
-        n = head.next # pointer to next node
-        
         #iterate thorugh list
         while c:
+            temp = c.next
             # make curr point to prev
             c.next = p 
             # move all three pointers down one spot in list
             p = c 
-            c = n
-            # when n is null we do not want to access n.next
-            if n and n.next:
-                n = n.next
-            else:
-                n = None
+            c = temp
 
         return p
             
