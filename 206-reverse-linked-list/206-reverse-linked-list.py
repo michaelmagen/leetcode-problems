@@ -14,6 +14,7 @@ class Solution:
         
         #iterate thorugh list
         while c:
+            # save c.next so that we can iterate the curr pointer
             temp = c.next
             # make curr point to prev
             c.next = p 
