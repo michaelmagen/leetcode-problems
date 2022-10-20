@@ -8,9 +8,5 @@ class Solution:
                 hashMap[anag].append(n)
             else:
                 hashMap[anag] = [n]
-        
-        answer = []
-        for key in hashMap:
-            answer.append(hashMap[key])
-            
-        return answer
+    
+        return hashMap.values()
