@@ -1,7 +1,7 @@
 class Solution:
     def halvesAreAlike(self, s: str) -> bool:
-        l = s[0:len(s) // 2]
-        r = s[len(s) // 2: len(s)]
+        l = 0
+        r = len(s) - 1
         countL = 0
         countR = 0
         
@@ -11,10 +11,12 @@ class Solution:
                 return True
             return False
         
-        for i in range(len(l)):
-            if isVowel(l[i]):
+        while l < r:
+            if isVowel(s[l]):
                 countL += 1
-            if isVowel(r[i]):
+            if isVowel(s[r]):
                 countR += 1
+            l += 1
+            r -= 1
         
         return countL == countR
