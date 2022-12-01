@@ -5,10 +5,16 @@ class Solution:
         countL = 0
         countR = 0
         
+        def isVowel(char):
+            x = char.lower()
+            if x == 'a' or x == 'e' or x == 'i' or x == 'u' or x == 'o':
+                return True
+            return False
+        
         for i in range(len(l)):
-            if l[i].lower() == 'a' or l[i].lower() == 'e' or l[i].lower() == 'i' or l[i].lower() == 'u' or l[i].lower() == 'o':
+            if isVowel(l[i]):
                 countL += 1
-            if r[i].lower() == 'a' or r[i].lower() == 'e' or r[i].lower() == 'i' or r[i].lower() == 'u' or r[i].lower() == 'o':
+            if isVowel(r[i]):
                 countR += 1
         
         return countL == countR
